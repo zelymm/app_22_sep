@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:mariadb://127.0.0.1:3307/app_2022_09_22?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
     driver-class-name:
-    username: root
-    password:
+    username: sbsst
+    password: sbsst123414
   jpa:
     show-sql: true
