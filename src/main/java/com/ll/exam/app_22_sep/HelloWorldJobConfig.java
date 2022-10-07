@@ -23,7 +23,7 @@ public class HelloWorldJobConfig {
     @Bean
     public Job helloWorldJob() {
         return jobBuilderFactory.get("helloWorldJob")
-                .incrementer(new RunIdIncrementer())
+                //.incrementer(new RunIdIncrementer())
                 .start(helloWorldStep1())
                 .next(helloWorldStep2())
                 .build();
@@ -59,6 +59,16 @@ public class HelloWorldJobConfig {
     public Tasklet helloWorldStep2Tasklet() {
         return (contribution, chunkContext) -> {
             System.out.println("hello world for step2!");
+
+            /*
+            if (true) {
+                throw new Exception("failure : step2");
+            }
+            */
+            if (false) {
+                throw new Exception("failure : step2");
+            }
+
             return RepeatStatus.FINISHED;
         };
     }
